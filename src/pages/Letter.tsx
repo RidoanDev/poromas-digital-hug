@@ -23,12 +23,12 @@ const Letter = () => {
       {/* Letter Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="max-w-lg mx-auto space-y-8">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8">
             A Letter for You
           </h2>
 
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-soft">
-            <div className="font-handwriting text-lg leading-relaxed text-foreground space-y-4">
+            <div className="font-handwriting text-xl md:text-lg leading-relaxed text-foreground space-y-4">
               <p>Dear Poroma,</p>
               <p>
                 On this special day, I want you to know that you are more than just a sister to me; 
@@ -53,7 +53,7 @@ const Letter = () => {
               placeholder="Write something for me?"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="min-h-[100px] border-soft-pink/30 focus:border-warm-peach resize-none font-handwriting text-base"
+              className="min-h-[100px] border-soft-pink/30 focus:border-warm-peach resize-none text-base"
             />
             <Button 
               onClick={handleSendMessage}
