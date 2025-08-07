@@ -105,6 +105,23 @@ export default {
 				'heart-pulse': {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.1)' }
+				},
+				'rakhi-sparkle': {
+					'0%, 100%': { transform: 'scale(0.8) rotate(0deg)', opacity: '0.7' },
+					'50%': { transform: 'scale(1.2) rotate(180deg)', opacity: '1' }
+				},
+				'love-bounce': {
+					'0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+					'40%': { transform: 'translateY(-20px)' },
+					'60%': { transform: 'translateY(-10px)' }
+				},
+				'gentle-sway': {
+					'0%, 100%': { transform: 'rotate(-2deg)' },
+					'50%': { transform: 'rotate(2deg)' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(30px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
@@ -112,7 +129,11 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'envelope-pop': 'envelope-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
 				'float': 'float 3s ease-in-out infinite',
-				'heart-pulse': 'heart-pulse 2s ease-in-out infinite'
+				'heart-pulse': 'heart-pulse 2s ease-in-out infinite',
+				'rakhi-sparkle': 'rakhi-sparkle 2s ease-in-out infinite',
+				'love-bounce': 'love-bounce 2s infinite',
+				'gentle-sway': 'gentle-sway 4s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out'
 			}
 		}
 	},

@@ -40,7 +40,7 @@ const Promise = () => {
             {promises.map((promise, index) => (
               <div key={index} className="flex items-start space-x-3 text-left">
                 <Check className="w-5 h-5 text-warm-peach mt-1 flex-shrink-0" />
-                <p className="text-base text-foreground font-handwriting leading-relaxed">
+                <p className="text-base text-foreground leading-relaxed animate-fade-in-up">
                   {promise}
                 </p>
               </div>
@@ -48,10 +48,10 @@ const Promise = () => {
           </div>
 
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
-            <p className="text-lg font-handwriting text-foreground leading-relaxed mb-4">
+            <p className="text-lg text-foreground leading-relaxed mb-4 animate-gentle-sway">
               "No matter what happens in life, you'll always have me as your brother."
             </p>
-            <p className="text-base font-handwriting text-warm-peach">
+            <p className="text-base text-warm-peach animate-love-bounce">
               — Your Brother 💖
             </p>
           </div>
