@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Raksha Bandhan Gift Website Design System - Soft & Warm Colors */
+/* Raksha Bandhan Gift Website Design System - Cute & Beautiful */
 
 @layer base {
   :root {
@@ -120,5 +122,86 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Comfortaa', sans-serif;
+  }
+}
+
+@layer components {
+  /* Cute text styles */
+  .text-cute {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+  }
+  
+  .text-cute-bold {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+  
+  .text-handwriting {
+    font-family: 'Caveat', cursive;
+    font-weight: 500;
+    letter-spacing: 0.015em;
+  }
+  
+  .text-dancing {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+    letter-spacing: 0.015em;
+  }
+  
+  /* Beautiful glass effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  
+  .glass-soft {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Sparkle effect */
+  .sparkle::before {
+    content: '✨';
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Beautiful gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(15 85% 65%), hsl(340 60% 75%), hsl(280 35% 75%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

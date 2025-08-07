@@ -73,8 +73,10 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
+				'cute': ['Comfortaa', 'sans-serif'],
+				'handwriting': ['Caveat', 'cursive'],
+				'dancing': ['Dancing Script', 'cursive'],
 				'poppins': ['Poppins', 'sans-serif'],
-				'handwriting': ['Patrick Hand', 'cursive'],
 			},
 			backgroundImage: {
 				'gradient-warm': 'var(--gradient-warm)',
