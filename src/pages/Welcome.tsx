@@ -28,7 +28,7 @@ const Welcome = () => {
           >
             <div className="bg-white p-8 rounded-3xl shadow-warm text-center transform hover:scale-105 transition-transform">
               <Mail className="w-16 h-16 text-warm-peach mx-auto mb-4 animate-float" />
-              <p className="text-lg text-foreground mb-2">You have a letter! 💌</p>
+              <p className="text-lg font-handwriting text-foreground mb-2">You have a letter! 💌</p>
               <p className="text-sm text-muted-foreground">Tap to open</p>
             </div>
           </div>
@@ -43,7 +43,7 @@ const Welcome = () => {
               Happy Raksha Bandhan, 
               <span className="block text-warm-peach mt-2">Poroma 💖</span>
             </h1>
-            <p className="text-lg text-muted-foreground animate-fade-in-up">
+            <p className="text-lg text-muted-foreground font-handwriting">
               Here's a little surprise made with love…
             </p>
           </div>
@@ -57,7 +57,7 @@ const Welcome = () => {
           </div>
 
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
-            <p className="text-base text-foreground leading-relaxed">
+            <p className="text-base text-foreground font-handwriting leading-relaxed">
               "Scroll through each step slowly. I have something special for you."
             </p>
           </div>
