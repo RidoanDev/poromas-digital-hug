@@ -19,11 +19,11 @@ const Letter = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft font-poppins">
+    <div className="min-h-screen bg-gradient-soft font-cute">
       {/* Letter Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="max-w-lg mx-auto space-y-8">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-8">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-8 font-adorable">
             A Letter for You
           </h2>
 
@@ -53,12 +53,12 @@ const Letter = () => {
               placeholder="Write something for me?"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="min-h-[100px] border-soft-pink/30 focus:border-warm-peach resize-none font-handwriting text-base"
+              className="min-h-[100px] border-soft-pink/30 focus:border-warm-peach resize-none font-lovely text-base"
             />
             <Button 
               onClick={handleSendMessage}
               disabled={!message.trim()}
-              className="w-full bg-soft-pink text-foreground hover:bg-soft-pink/80 rounded-xl py-3 font-medium disabled:opacity-50"
+              className="w-full bg-soft-pink text-foreground hover:bg-soft-pink/80 rounded-xl py-3 font-medium disabled:opacity-50 font-sweet"
             >
               Send 💌
             </Button>

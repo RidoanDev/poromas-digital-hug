@@ -18,7 +18,7 @@ const Welcome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft font-poppins relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-soft font-cute relative overflow-x-hidden">
       {/* Envelope Modal */}
       {showEnvelope && (
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -28,8 +28,8 @@ const Welcome = () => {
           >
             <div className="bg-white p-8 rounded-3xl shadow-warm text-center transform hover:scale-105 transition-transform">
               <Mail className="w-16 h-16 text-warm-peach mx-auto mb-4 animate-float" />
-              <p className="text-lg font-handwriting text-foreground mb-2">You have a letter! 💌</p>
-              <p className="text-sm text-muted-foreground">Tap to open</p>
+              <p className="text-lg font-adorable text-foreground mb-2">You have a letter! 💌</p>
+              <p className="text-sm text-muted-foreground font-cute">Tap to open</p>
             </div>
           </div>
         </div>
@@ -39,11 +39,11 @@ const Welcome = () => {
       <section className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
         <div className="max-w-md mx-auto space-y-8">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold text-foreground font-poppins">
+            <h1 className="text-4xl font-bold text-foreground font-adorable">
               Happy Raksha Bandhan, 
-              <span className="block text-warm-peach mt-2">Poroma 💖</span>
+              <span className="block text-warm-peach mt-2 font-playful">Poroma 💖</span>
             </h1>
-            <p className="text-lg text-muted-foreground font-handwriting">
+            <p className="text-lg text-muted-foreground font-lovely">
               Here's a little surprise made with love…
             </p>
           </div>
@@ -57,7 +57,7 @@ const Welcome = () => {
           </div>
 
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
-            <p className="text-base text-foreground font-handwriting leading-relaxed">
+            <p className="text-base text-foreground font-sweet leading-relaxed">
               "Scroll through each step slowly. I have something special for you."
             </p>
           </div>

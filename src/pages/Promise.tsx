@@ -19,7 +19,7 @@ const Promise = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft font-poppins">
+    <div className="min-h-screen bg-gradient-soft font-cute">
       {/* Promise Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="max-w-lg mx-auto space-y-8 text-center">
@@ -32,7 +32,7 @@ const Promise = () => {
             />
           </div>
 
-          <h2 className="text-3xl font-bold text-foreground">
+          <h2 className="text-3xl font-bold text-foreground font-adorable">
             My Promises to You 💞
           </h2>
 
@@ -40,7 +40,7 @@ const Promise = () => {
             {promises.map((promise, index) => (
               <div key={index} className="flex items-start space-x-3 text-left">
                 <Check className="w-5 h-5 text-warm-peach mt-1 flex-shrink-0" />
-                <p className="text-base text-foreground font-handwriting leading-relaxed">
+                <p className="text-base text-foreground font-sweet leading-relaxed">
                   {promise}
                 </p>
               </div>
@@ -48,10 +48,10 @@ const Promise = () => {
           </div>
 
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
-            <p className="text-lg font-handwriting text-foreground leading-relaxed mb-4">
+            <p className="text-lg font-lovely text-foreground leading-relaxed mb-4">
               "No matter what happens in life, you'll always have me as your brother."
             </p>
-            <p className="text-base font-handwriting text-warm-peach">
+            <p className="text-base font-playful text-warm-peach">
               — Your Brother 💖
             </p>
           </div>
@@ -59,7 +59,7 @@ const Promise = () => {
           {/* Back to Home Button */}
           <Button 
             onClick={handleBackToHome}
-            className="bg-lavender text-foreground hover:bg-lavender/80 px-8 py-4 rounded-full text-lg font-medium shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto"
+            className="bg-lavender text-foreground hover:bg-lavender/80 px-8 py-4 rounded-full text-lg font-medium shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto font-sweet"
           >
             <Home className="w-5 h-5" />
             Back to Home

@@ -73,8 +73,12 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				'poppins': ['Poppins', 'sans-serif'],
-				'handwriting': ['Patrick Hand', 'cursive'],
+				'cute': ['Quicksand', 'sans-serif'],
+				'adorable': ['Fredoka', 'sans-serif'],
+				'sweet': ['Nunito', 'sans-serif'],
+				'handwriting': ['Caveat', 'cursive'],
+				'playful': ['Pacifico', 'cursive'],
+				'lovely': ['Kalam', 'cursive'],
 			},
 			backgroundImage: {
 				'gradient-warm': 'var(--gradient-warm)',
