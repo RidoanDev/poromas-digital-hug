@@ -19,23 +19,16 @@ const Letter = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft font-cute relative overflow-x-hidden">
-      {/* Floating background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 right-10 text-5xl opacity-20 float">💌</div>
-        <div className="absolute top-60 left-10 text-4xl opacity-25 float" style={{animationDelay: '1.5s'}}>💝</div>
-        <div className="absolute bottom-60 right-20 text-6xl opacity-15 float" style={{animationDelay: '0.8s'}}>🌹</div>
-        <div className="absolute bottom-20 left-20 text-3xl opacity-30 float" style={{animationDelay: '2.2s'}}>💕</div>
-      </div>
+    <div className="min-h-screen bg-gradient-soft font-poppins">
       {/* Letter Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="max-w-lg mx-auto space-y-8">
-          <h2 className="text-3xl text-cute-bold text-center gradient-text mb-8 sparkle">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-8">
             A Letter for You
           </h2>
 
-          <div className="glass-card rounded-2xl p-8 shadow-soft">
-            <div className="text-handwriting text-lg leading-relaxed text-foreground space-y-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-soft">
+            <div className="font-handwriting text-lg leading-relaxed text-foreground space-y-4">
               <p>Dear Poroma,</p>
               <p>
                 On this special day, I want you to know that you are more than just a sister to me; 
@@ -50,22 +43,22 @@ const Letter = () => {
               </p>
               <div className="text-right mt-6">
                 <p>With all my love,</p>
-                <p className="text-cute-bold gradient-text">Your Brother 🤍</p>
+                <p className="font-bold">Your Brother 🤍</p>
               </div>
             </div>
           </div>
 
-          <div className="glass-soft rounded-2xl p-6 shadow-soft space-y-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-soft space-y-4">
             <Textarea
               placeholder="Write something for me?"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="min-h-[100px] border-soft-pink/30 focus:border-warm-peach resize-none text-handwriting text-base glass-soft"
+              className="min-h-[100px] border-soft-pink/30 focus:border-warm-peach resize-none font-handwriting text-base"
             />
             <Button 
               onClick={handleSendMessage}
               disabled={!message.trim()}
-              className="w-full bg-soft-pink text-foreground hover:bg-soft-pink/80 rounded-xl py-3 text-cute-bold disabled:opacity-50 transition-all duration-300 hover:scale-105"
+              className="w-full bg-soft-pink text-foreground hover:bg-soft-pink/80 rounded-xl py-3 font-medium disabled:opacity-50"
             >
               Send 💌
             </Button>
@@ -74,7 +67,7 @@ const Letter = () => {
           <div className="flex justify-center">
             <Button 
               onClick={handleNextClick}
-              className="bg-gradient-warm text-white px-8 py-4 rounded-full text-lg text-cute-bold shadow-warm hover:shadow-lg transition-all duration-300 hover:scale-105 sparkle"
+              className="bg-gradient-warm text-white px-8 py-4 rounded-full text-lg font-medium shadow-warm hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Next →
             </Button>
