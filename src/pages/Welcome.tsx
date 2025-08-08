@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Mail } from 'lucide-react';
+import { Mail, Volume2, VolumeX } from 'lucide-react';
 import poromaImage from "@/assets/poroma-image.png";
+import { useBackgroundMusic } from "@/hooks/useBackgroundMusic";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const Welcome = () => {
   const [showEnvelope, setShowEnvelope] = useState(false);
   const navigate = useNavigate();
+  const { isPlaying, play, pause } = useBackgroundMusic('/assets/rakhi-music.mp3', 0.2);
 
   const handleNextClick = () => {
     setShowEnvelope(true);
@@ -19,6 +22,22 @@ const Welcome = () => {
 
   return (
     <div className="min-h-screen bg-gradient-soft font-cute relative overflow-x-hidden">
+      {/* Music Control */}
+      <div className="fixed top-4 right-4 z-50">
+        <Button
+          onClick={isPlaying ? pause : play}
+          variant="outline"
+          size="sm"
+          className="bg-white/80 backdrop-blur-sm border-warm-peach/30 hover:bg-warm-peach/20 transition-all duration-300"
+        >
+          {isPlaying ? (
+            <Volume2 className="w-4 h-4 text-warm-peach" />
+          ) : (
+            <VolumeX className="w-4 h-4 text-muted-foreground" />
+          )}
+        </Button>
+      </div>
+
       {/* Envelope Modal */}
       {showEnvelope && (
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -48,13 +67,11 @@ const Welcome = () => {
             </p>
           </div>
 
-          <div className="w-full rounded-2xl overflow-hidden shadow-soft">
-            <img 
-              src={poromaImage} 
-              alt="For my dear sister Poroma"
-              className="w-full h-auto object-cover"
-            />
-          </div>
+          <OptimizedImage
+            src={poromaImage}
+            alt="For my dear sister Poroma"
+            className="w-full rounded-2xl overflow-hidden shadow-soft"
+          />
 
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
             <p className="text-base text-foreground font-sweet leading-relaxed">

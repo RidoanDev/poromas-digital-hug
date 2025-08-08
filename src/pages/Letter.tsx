@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Volume2, VolumeX } from 'lucide-react';
+import { useBackgroundMusic } from "@/hooks/useBackgroundMusic";
 
 const Letter = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const { isPlaying, play, pause } = useBackgroundMusic('/assets/rakhi-music.mp3', 0.2);
 
   const handleSendMessage = () => {
     const subject = "Raksha Bandhan Letter for You";
@@ -20,6 +23,22 @@ const Letter = () => {
 
   return (
     <div className="min-h-screen bg-gradient-soft font-cute">
+      {/* Music Control */}
+      <div className="fixed top-4 right-4 z-50">
+        <Button
+          onClick={isPlaying ? pause : play}
+          variant="outline"
+          size="sm"
+          className="bg-white/80 backdrop-blur-sm border-warm-peach/30 hover:bg-warm-peach/20 transition-all duration-300"
+        >
+          {isPlaying ? (
+            <Volume2 className="w-4 h-4 text-warm-peach" />
+          ) : (
+            <VolumeX className="w-4 h-4 text-muted-foreground" />
+          )}
+        </Button>
+      </div>
+
       {/* Letter Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="max-w-lg mx-auto space-y-8">

@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Heart, Check, Home } from 'lucide-react';
+import { Heart, Check, Home, Volume2, VolumeX } from 'lucide-react';
 import rakhiImage from "@/assets/rakhi-illustration.png";
+import { useBackgroundMusic } from "@/hooks/useBackgroundMusic";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const Promise = () => {
   const navigate = useNavigate();
+  const { isPlaying, play, pause } = useBackgroundMusic('/assets/rakhi-music.mp3', 0.2);
 
   const promises = [
     "I promise to protect you — always",
@@ -20,17 +23,31 @@ const Promise = () => {
 
   return (
     <div className="min-h-screen bg-gradient-soft font-cute">
+      {/* Music Control */}
+      <div className="fixed top-4 right-4 z-50">
+        <Button
+          onClick={isPlaying ? pause : play}
+          variant="outline"
+          size="sm"
+          className="bg-white/80 backdrop-blur-sm border-warm-peach/30 hover:bg-warm-peach/20 transition-all duration-300"
+        >
+          {isPlaying ? (
+            <Volume2 className="w-4 h-4 text-warm-peach" />
+          ) : (
+            <VolumeX className="w-4 h-4 text-muted-foreground" />
+          )}
+        </Button>
+      </div>
+
       {/* Promise Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="max-w-lg mx-auto space-y-8 text-center">
           {/* Rakhi illustration */}
-          <div className="w-full rounded-2xl overflow-hidden shadow-soft">
-            <img 
-              src={rakhiImage} 
-              alt="Brother and sister rakhi illustration"
-              className="w-full h-auto object-cover"
-            />
-          </div>
+          <OptimizedImage
+            src={rakhiImage}
+            alt="Brother and sister rakhi illustration"
+            className="w-full rounded-2xl overflow-hidden shadow-soft"
+          />
 
           <h2 className="text-3xl font-bold text-foreground font-adorable">
             My Promises to You 💞
