@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useBackgroundMusic = (audioUrl: string, volume: number = 0.3) => {
+export const useBackgroundMusic = (audioUrl: string, volume: number = 0.2) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,6 +17,20 @@ export const useBackgroundMusic = (audioUrl: string, volume: number = 0.3) => {
     // Event listeners
     const handleCanPlayThrough = () => {
       setIsLoaded(true);
+      // Auto start music as soon as it's loaded
+      audio.play().catch(() => {
+        // If autoplay fails due to browser policy, try on first user interaction
+        const startOnInteraction = () => {
+          audio.play().catch(console.error);
+          document.removeEventListener('click', startOnInteraction);
+          document.removeEventListener('touchstart', startOnInteraction);
+          document.removeEventListener('scroll', startOnInteraction);
+        };
+        
+        document.addEventListener('click', startOnInteraction, { once: true });
+        document.addEventListener('touchstart', startOnInteraction, { once: true });
+        document.addEventListener('scroll', startOnInteraction, { once: true });
+      });
     };
 
     const handlePlay = () => {
@@ -31,51 +45,16 @@ export const useBackgroundMusic = (audioUrl: string, volume: number = 0.3) => {
     audio.addEventListener('play', handlePlay);
     audio.addEventListener('pause', handlePause);
 
-    // Auto play after user interaction
-    const startMusicOnInteraction = () => {
-      if (audio && isLoaded && !isPlaying) {
-        audio.play().catch(console.error);
-      }
-      document.removeEventListener('click', startMusicOnInteraction);
-      document.removeEventListener('touchstart', startMusicOnInteraction);
-    };
-
-    document.addEventListener('click', startMusicOnInteraction);
-    document.addEventListener('touchstart', startMusicOnInteraction);
-
     return () => {
       audio.removeEventListener('canplaythrough', handleCanPlayThrough);
       audio.removeEventListener('play', handlePlay);
       audio.removeEventListener('pause', handlePause);
-      document.removeEventListener('click', startMusicOnInteraction);
-      document.removeEventListener('touchstart', startMusicOnInteraction);
       audio.pause();
     };
-  }, [audioUrl, volume, isLoaded, isPlaying]);
-
-  const play = () => {
-    if (audioRef.current && isLoaded) {
-      audioRef.current.play().catch(console.error);
-    }
-  };
-
-  const pause = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-  };
-
-  const setVolumeLevel = (newVolume: number) => {
-    if (audioRef.current) {
-      audioRef.current.volume = Math.max(0, Math.min(1, newVolume));
-    }
-  };
+  }, [audioUrl, volume]);
 
   return {
     isPlaying,
     isLoaded,
-    play,
-    pause,
-    setVolumeLevel,
   };
 };

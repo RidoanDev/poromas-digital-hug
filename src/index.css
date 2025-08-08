@@ -111,6 +111,11 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  
+  .bg-gradient-text {
+    background: linear-gradient(45deg, hsl(var(--warm-peach)), hsl(var(--soft-pink)), hsl(var(--lavender)));
+    background-size: 200% 200%;
+  }
 }
 
 @layer base {
